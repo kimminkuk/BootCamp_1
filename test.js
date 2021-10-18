@@ -8,6 +8,8 @@ Result = {
     'sell':''
 }
 
+var TESTUPDATE = ['0','1'];
+
 function getData() {
     var html = "https://finance.naver.com/marketindex/exchangeDailyQuote.nhn";
     request(html, function(err,res,body) {
