@@ -68,5 +68,5 @@ function getData3() {
         });
     }
 }
-
+alert("on!");
 getData3();

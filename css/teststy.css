@@ -102,7 +102,7 @@ nav {
 }
 
 article {
-    height: 200px;
+    height: 150px;
     margin-left : 10%;
     border : 1px solid silver;
     margin-bottom: 5%;
@@ -116,7 +116,7 @@ article {
 
 #myimg3 {
     width: 200px;
-    height: 200px;
+    height: 150px;
     border : 1px solid gray;
     float: left;
 }
