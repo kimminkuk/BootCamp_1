@@ -13,7 +13,7 @@
 
 
 #btn1 {
-    background-color: skyblue;
+    background-color: deepskyblue;
     border: 0px;
     color: white;
     font-weight: bolder;
@@ -23,4 +23,16 @@
     right : 10px;
     height: 50px;
     width: 200px;
+}
+
+#mainlist {
+    background-color: rgba(52, 84, 97, 1.0);
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    position: absolute;
+    border: 1px solid gray;
+    top : 100px;
+    left : 100px;
+    margin: 5px;
 }
