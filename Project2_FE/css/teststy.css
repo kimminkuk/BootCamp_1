@@ -1,0 +1,38 @@
+#inclinationText {
+    color :green;
+    font-weight: bolder;
+    font-size: 30px;
+    transform: rotate(-30deg);
+    border: 1px;
+    position: absolute;
+    top : 30px;
+    left : 10px;
+    height: 50px;
+    width: 300px;
+}
+
+
+#btn1 {
+    background-color: deepskyblue;
+    border: 0px;
+    color: white;
+    font-weight: bolder;
+    font-size : 15px;
+    position: absolute;
+    top : 30px;
+    right : 10px;
+    height: 50px;
+    width: 200px;
+}
+
+#mainlist {
+    background-color: rgba(52, 84, 97, 1.0);
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    position: absolute;
+    border: 1px solid gray;
+    top : 100px;
+    left : 100px;
+    margin: 5px;
+}
