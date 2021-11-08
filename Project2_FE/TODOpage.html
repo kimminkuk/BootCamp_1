@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MAKE WORK</title>
+    <link rel="stylesheet" href="./css/teststy.css">
 </head>
 <body>
-    TEST TODO
+    <header>
+        <div class = "head2">
+            할일 등록
+        </div>
+    </header>
+
+    <section class = "centerfix">
+        <div>
+            <label>
+                어떤일인가요?
+            </label>
+            <form name="WhatWorkForm">
+                <input type="text" name="WhatWork" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
+            </form>
+        </div>
+
+        <div>
+            <label>
+                누가 할일인가요?
+            </label>
+            <form name="WhoWorkForm">
+                <input type="text" name="WhoWork" required maxlength="24" placeholder="VEX" size="12"/>
+            </form>
+        </div>
+
+        <div>
+            <label>
+                우선순위를 입력하세요.
+            </label>
+            <form name="PriorityForm" class = "centerfix_font">
+                <label><input type="radio" name="PriorityBtn" value="1" checked/>1순위</label>
+                <label><input type="radio" name="PriorityBtn" value="2"/>2순위</label>
+                <label><input type="radio" name="PriorityBtn" value="3"/>3순위</label>
+              </form>
+        </div>
+
+    </section>
+
+    <footer class = "footer_todo">
+        <div class = "btnsty2">
+            <button id = "btn4" type="button" onclick="location.href='./HOME.html'" style="cursor: hand;">
+                &lt; 이전
+            </button>
+
+            <button id = "btn2" type="button" onclick="location.href='./TODOpage.html'" style="cursor: hand;">
+                제출
+            </button>
+        </div>
+        <div class = "btnsty2">
+            <button id = "btn3" type="button" onclick="location.href='./TODOpage.html'" style="cursor: hand;">
+                내용지우기
+            </button>
+        </div>
+    </footer>
 </body>
 </html>

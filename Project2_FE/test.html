@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="./css/teststy.css">
+<h3>The flex-direction Property</h3>
+<form name="flexForm">
+  <label><input type="radio" name="fDTypes" value="column" checked/>column</label>
+  <label><input type="radio" name="fDTypes" value="column-reverse"/>column-reverse</label>
+  <label><input type="radio" name="fDTypes" value="row"/>row</label>
+  <label><input type="radio" name="fDTypes" value="row-reverse"/>row-reverse</label>
+</form>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+
+
+<!-- <script type="text/javascript" src="summit.js"></script> -->
+<script>
+  var rad = document.flexForm.fDTypes;
+  var fContainer = document.getElementsByClassName('flex-container');
+  var prev = null;
+    for(var i = 0; i < rad.length; i++) {
+      rad[i].addEventListener('change', function() {
+        fContainer.item(0).style.flexDirection = this.value;
+      });
+    }
+</script>
