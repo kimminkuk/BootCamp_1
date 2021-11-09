@@ -20,7 +20,7 @@
                 어떤일인가요?
             </label>
             <form name="WhatWorkForm">
-                <input type="text" name="WhatWork" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
+                <input id="WhatWork_id" type="text" name="WhatWork" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
             </form>
         </div>
 
@@ -29,7 +29,7 @@
                 누가 할일인가요?
             </label>
             <form name="WhoWorkForm">
-                <input type="text" name="WhoWork" required maxlength="24" placeholder="VEX" size="12"/>
+                <input id="WhoWork_id" type="text" name="WhoWork" required maxlength="24" placeholder="VEX" size="12"/>
             </form>
         </div>
 
@@ -47,7 +47,7 @@
     </section>
 
     <footer class = "footer_todo">
-        <div class = "btnsty2">
+        <!-- <div class = "btnsty2">
             <button id = "btn4" type="button" onclick="location.href='./HOME.html'" style="cursor: hand;">
                 &lt; 이전
             </button>
@@ -60,7 +60,27 @@
             <button id = "btn3" type="button" onclick="location.href='./TODOpage.html'" style="cursor: hand;">
                 내용지우기
             </button>
+        </div> -->
+
+        <div class = "btnsty2">
+            <button id = "btn4" type="button" onclick="location.href='./HOME.html'" style="cursor: hand;">
+                &lt; 이전
+            </button>
+            <form  name="PostDB" action="login" method="post" enctype="UTF-8" >
+                <button id = "btn2" type="button" onclick="runtest(WhatWork_id,WhoWork_id)" style="cursor: hand;">
+                    제출
+                </button>
+            </form>
+        </div>
+        <div class = "btnsty2">
+            <button id = "btn3" type="button" onclick="location.href='./TODOpage.html'" style="cursor: hand;">
+                내용지우기
+            </button>
         </div>
     </footer>
+
+    <div name='testNav' id='testNav'></div>
+    
+    <script type="text/javascript" src="summit.js"></script>
 </body>
 </html>
