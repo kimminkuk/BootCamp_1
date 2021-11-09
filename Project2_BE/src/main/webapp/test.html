@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAKE WORK</title>
-    <link rel="stylesheet" href="./css/teststy.css">
+    <link rel="stylesheet" href="./teststy.css">
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
                 어떤일인가요?
             </label>
             <form name="WhatWorkForm">
-                <input id="WhatWork_id" type="text" name="WhatWork" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
+                <input id="WhatWork_id" type="text" name="WhatWork_id" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
             </form>
         </div>
 
@@ -29,7 +29,7 @@
                 누가 할일인가요?
             </label>
             <form name="WhoWorkForm">
-                <input id="WhoWork_id" type="text" name="WhoWork" required maxlength="24" placeholder="VEX" size="12"/>
+                <input id="WhoWork_id" type="text" name="WhoWork_id" required maxlength="24" placeholder="VEX" size="12"/>
             </form>
         </div>
 
@@ -47,30 +47,27 @@
     </section>
 
     <footer class = "footer_todo">
-        <!-- <div class = "btnsty2">
-            <button id = "btn4" type="button" onclick="location.href='./HOME.html'" style="cursor: hand;">
-                &lt; 이전
-            </button>
-
-            <button id = "btn2" type="button" onclick="location.href='./TODOpage.html'" style="cursor: hand;">
-                제출
-            </button>
-        </div>
-        <div class = "btnsty2">
-            <button id = "btn3" type="button" onclick="location.href='./TODOpage.html'" style="cursor: hand;">
-                내용지우기
-            </button>
-        </div> -->
-
         <div class = "btnsty2">
             <button id = "btn4" type="button" onclick="location.href='./HOME.html'" style="cursor: hand;">
                 &lt; 이전
             </button>
-            <form  name="PostDB" action="todolists" method="post" enctype="UTF-8" >
+<!--              <form  name="PostDB" action="todolists" method="get" enctype="UTF-8" >
                 <button id = "btn2" type="button" onclick="runtest(WhatWork_id,WhoWork_id)" style="cursor: hand;">
                     제출
                 </button>
-            </form>
+            </form>  -->
+            
+            <form  name="PostDB" action="todolists" method="get" enctype="UTF-8" >
+
+            <label>
+               22222 어떤일인가요?
+            </label>
+                <input id="WhatWork" type="text" name="WhatWork_id" required maxlength="48" placeholder="결제시스템 구축" size="48"/><input id="WhoWork_id" type="text" name="WhoWork_id" required maxlength="24" placeholder="VEX" size="12"/>
+                <input id="WhoWork" type="text" name="WhoWork_id" required maxlength="24" placeholder="VEX" size="12"/>
+                <button id = "btn2" type="button" onclick="runtest(WhatWork_id,WhoWork_id)" style="cursor: hand;">
+                    제출2
+                </button>
+            </form> 
         </div>
         <div class = "btnsty2">
             <button id = "btn3" type="button" onclick="location.href='./TODOpage.html'" style="cursor: hand;">
@@ -81,6 +78,6 @@
 
     <div name='testNav' id='testNav'></div>
     
-    <script type="text/javascript" src="summit.js"></script>
+    <script type="text/javascript" src="./summit.js"></script>
 </body>
 </html>

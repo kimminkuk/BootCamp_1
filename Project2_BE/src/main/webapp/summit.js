@@ -32,12 +32,12 @@ function runtest(param, param2) {
      setTimeout(function() {
          var msg = "test1";
          console.log(msg);
-         location.href = './HOME.html' // Action ok
+         //location.href = './HOME.html' // Action ok
      }, 3000);
 
     makeTodoList(param, param2);
     TodotoServlet(param, param2)
-    location.href = './HOME.html' // Action ok
+    //location.href = './HOME.html' // Action ok
     
     makeTodoList2();
 }
@@ -56,17 +56,16 @@ function makeTodoList2() {
 }
 
 function TodotoServlet(param, param2) {
-    var Work_DB = document.WhatWorkForm.WhatWork_id.value;
-    var Who_DB = document.WhoWorkForm.WhoWork_id.value;
-    //var Post_DB = document.PostDB;
-    var Post_DB = "http://localhost:8080/webapiexam2/";
+    var Work_DB = param.value;
+    var Who_DB = param.value;
+    var Post_DB = document.PostDB;
+    //var Post_DB = "http://localhost:8080/webapiexam2/";
     Post_DB.method = "get";
     Post_DB.method = "todolists";
 
     //TodoAjax();
     console.log(Work_DB, Who_DB, Post_DB.action, "1111");
     Post_DB.submit();
-    //location.href = "http://localhost:8080/webapiexam2/todolists";
     console.log(Work_DB, Who_DB, Post_DB.action, Post_DB.submit());
 }
 

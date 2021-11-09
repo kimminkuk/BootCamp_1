@@ -13,6 +13,7 @@ import kr.or.connect.jdbcexam.dto.Role;
 public class RoleDao {
 	
 	private static String dburl  = "jdbc:mysql://localhost:3306/connectdb";
+	//private static String dburl = "jdbc:mysql://localhost:3306/connectdb?serverTimezone=Asia/Seoul&useSSL=false";
 	private static String dbUser = "connectuser3";
 	private static String dbpassword = "connect123!@#";
 		
