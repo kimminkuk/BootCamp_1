@@ -7,15 +7,23 @@ function GetDateFunc() {
 }
 
 function SendToDo(param1, param2) {
+	var textinputcheck = document.getElementsByClassName("input-text");
     var currentDate = GetDateFunc();
     var Post_DB = document.PostDB;
+
     if (!param1 || !param2) {
         console.log("ERR: EMPTY TEXT!")
         return false;
     } else {
         Post_DB.method = "get";
         Post_DB.method = "todolists";
+        //Post_DB.action = "./test2.html";
         Post_DB.submit(); // Send to Servlet
+        
+        alert("OK");
+        reqLis();
+        //Post_DB.action = "./test2.html";
+        //location.href = './test2.html' // Action ok
         return true;  
     }
 }
@@ -70,8 +78,27 @@ function DelRequest2(url, userName) {
 }
 
 function reqLis() {
-    var httpRequest3;
-    httpRequest3 = new XMLHttpRequest();
-    httpRequest3.open('GET', './../../../../Project2_FE/HOME.html');
-    httpRequest3.send();
+	var httpRequest3;
+    fetch('./HOME.html').then(function(response) {
+	    response.text().then(function(text) {
+		    document.querySelector('article').innerHTML = text;
+	    })
+    })
 }
+
+function clearTextInput() {
+	var textinputlength = document.getElementsByClassName("input-text");
+	var radbtn = document.getElementsByClassName("input-radio");
+	
+	
+	var len_clearTextInput = textinputlength.length;
+	for (var i = 0; i < len_clearTextInput; i++) {
+		textinputlength[i].value = '';
+	}
+	var len_radbtn = radbtn.length;
+	for (var i = 0; i < len_radbtn; i++) {
+		radbtn[i].checked = false;
+	}
+    radbtn[0].checked = true;	
+}
+

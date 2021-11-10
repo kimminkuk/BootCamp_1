@@ -19,22 +19,6 @@ function printWhoWork() {
     document.getElementById("result_WhoWork_id").innerText = textInputWho;
 }
 
-function GetDateFunc() {
-    var currentDate = new Date();
-    var tt = currentDate.getMonth() + 1;
-    var Date_current = currentDate.getFullYear() + "-" + tt + "-" + currentDate.getDate();
-
-    return Date_current;
-}
-
-function SendToDo(param1, param2) {
-    var currentDate = GetDateFunc();
-    var postDB = document.PostDB;
-    
-    Post_DB.method = "post";
-    Post_DB.method = "todolists";
-}
-
 function runtest(param, param2) {
     console.log(param);
     console.log(param.value);
@@ -50,7 +34,7 @@ function runtest(param, param2) {
          console.log(msg);
          //location.href = './HOME.html' // Action ok
      }, 3000);
-
+    
     makeTodoList(param, param2);
     TodotoServlet(param, param2)
     //location.href = './HOME.html' // Action ok

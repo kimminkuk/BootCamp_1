@@ -14,19 +14,19 @@
     
     <form class="centerfix" action="todolists" name = "PostDB" method="get" enctype="UTF-8">
         <div name="WhatWorkInputName">
-            어떤일인가요?
-            <input id ="WhatWork_id" type="text" name="WhatWork_name" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
+            어떤일인가요?<br>
+            <input class = "input-text" id ="WhatWork_id" type="text" name="WhatWork_name" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
         </div>
         <div name="WhoWorkInputName">
-            누가 할일인가요?
-            <input id ="WhoWork_id" type="text" name="WhoWork_name" required maxlength="24" placeholder="Hashimoto" size="16">
+            누가 할일인가요?<br>
+            <input class = "input-text" id ="WhoWork_id" type="text" name="WhoWork_name" required maxlength="24" placeholder="Hashimoto" size="16">
         </div>
         <div name="PriorityRadButton">
-            우선순위를 입력하세요.
+            우선순위를 입력하세요.<br>
             <div class = "centerfix_font">
-                <label><input type="radio" name="PriorityBtn_name" value="1" checked/>1순위</label>
-                <label><input type="radio" name="PriorityBtn_name" value="2"/>2순위</label>
-                <label><input type="radio" name="PriorityBtn_name" value="3"/>3순위</label>
+                <label><input class = "input-radio" type="radio" name="PriorityBtn_name" value="1" checked/>1순위</label>
+                <label><input class = "input-radio" type="radio" name="PriorityBtn_name" value="2"/>2순위</label>
+                <label><input class = "input-radio" type="radio" name="PriorityBtn_name" value="3"/>3순위</label>
             </div>
         </div>
         <div name="btnlist">
@@ -38,12 +38,14 @@
                 제출
             </button>
 
-            <button name = "AjaxDelBtn" id = "btn3" type="button" onclick="reqLis()" style="cursor: hand;">
+            <button name = "AjaxDelBtn" id = "btn3" type="button" onclick="clearTextInput()" style="cursor: hand;">
                 내용지우기
             </button>
         </div>
     </form>
-
+    <article>
+    
+    </article>
     <script type="text/javascript" src="./summit2.js"></script>
 </body>
 </html>
