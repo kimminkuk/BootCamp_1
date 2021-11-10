@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO MAKE</title>
+    <link rel="stylesheet" href="./teststy.css">
+</head>
+<body>
+    <header class = "head2">
+        할일 등록
+    </header>
+    
+    <form class="centerfix" action="todolists" name = "PostDB" method="get" enctype="UTF-8">
+        <div name="WhatWorkInputName">
+            어떤일인가요?
+            <input id ="WhatWork_id" type="text" name="WhatWork_name" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
+        </div>
+        <div name="WhoWorkInputName">
+            누가 할일인가요?
+            <input id ="WhoWork_id" type="text" name="WhoWork_name" required maxlength="24" placeholder="Hashimoto" size="16">
+        </div>
+        <div name="PriorityRadButton">
+            우선순위를 입력하세요.
+            <div class = "centerfix_font">
+                <label><input type="radio" name="PriorityBtn_name" value="1" checked/>1순위</label>
+                <label><input type="radio" name="PriorityBtn_name" value="2"/>2순위</label>
+                <label><input type="radio" name="PriorityBtn_name" value="3"/>3순위</label>
+            </div>
+        </div>
+        <div name="btnlist">
+            <button id = "btn4" type="button" onclick="location.href='./HOME.html'" style="cursor: hand;">
+                &lt; 이전
+            </button>
+
+            <button id = "btn2" type="button" onclick="SendToDo(WhatWork_name, WhoWork_name)" style="cursor: hand;">
+                제출
+            </button>
+
+            <button name = "AjaxDelBtn" id = "btn3" type="button" onclick="reqLis()" style="cursor: hand;">
+                내용지우기
+            </button>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="./summit2.js"></script>
+</body>
+</html>
