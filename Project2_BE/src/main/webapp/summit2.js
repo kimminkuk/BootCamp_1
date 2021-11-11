@@ -6,26 +6,17 @@ function GetDateFunc() {
     return Date_current;
 }
 
-function SendToDo(param1, param2) {
-	var textinputcheck = document.getElementsByClassName("input-text");
+function SendToDo() {
     var currentDate = GetDateFunc();
     var Post_DB = document.PostDB;
-
-    if (!param1 || !param2) {
-        console.log("ERR: EMPTY TEXT!")
-        return false;
-    } else {
-        Post_DB.method = "get";
-        Post_DB.method = "todolists";
-        //Post_DB.action = "./test2.html";
-        Post_DB.submit(); // Send to Servlet
-        
-        alert("OK");
-        reqLis();
-        //Post_DB.action = "./test2.html";
-        //location.href = './test2.html' // Action ok
-        return true;  
-    }
+    
+    Post_DB.method = "get";
+    Post_DB.method = "todolists";
+    //Post_DB.action = "./test2.html";
+    Post_DB.submit(); // Send to Servlet
+    
+    alert("OK");
+    reqLis();
 }
 
 function testAjax() {

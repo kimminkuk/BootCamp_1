@@ -12,7 +12,7 @@
         할일 등록
     </header>
     
-    <form class="centerfix" action="todolists" name = "PostDB" method="get" enctype="UTF-8">
+    <form class="centerfix" name = "PostDB" method="get" enctype="UTF-8">
         <div name="WhatWorkInputName">
             어떤일인가요?<br>
             <input class = "input-text" id ="WhatWork_id" type="text" name="WhatWork_name" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
@@ -34,7 +34,7 @@
                 &lt; 이전
             </button>
 
-            <button id = "btn2" type="button" onclick="SendToDo()" style="cursor: hand;">
+            <button id = "btn2" type="button" onclick="SendToDo(WhatWork_name, WhoWork_name)" style="cursor: hand;">
                 제출
             </button>
 
@@ -46,6 +46,6 @@
     <article>
     
     </article>
-    <script type="text/javascript" src="./summit2.js"></script>
+    <script type="text/javascript" src="./submit3.js"></script>
 </body>
 </html>
