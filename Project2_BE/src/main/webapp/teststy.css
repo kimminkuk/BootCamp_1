@@ -14,15 +14,18 @@
 
 #btn1 {
     background-color: deepskyblue;
-    border: 0px;
     color: white;
     font-weight: bolder;
-    font-size : 15px;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+    
     position: absolute;
-    top : 30px;
-    right : 10px;
-    height: 50px;
-    width: 200px;
+    top : 20px;
+    left : 80%;
+    width: 18%;
+    padding : 20px;
+
 }
 
 .mainlist {
@@ -41,7 +44,62 @@
     margin: 10px;
 }
 
-#todolist {
+.mainlist_ {
+    background-color: rgba(52, 84, 97, 1.0);
+    color: white;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+    
+    position: absolute;
+    top : 100px;
+    left : 10%;
+    width: 25%;
+
+    padding: 20px;
+}
+
+.mainlist2_ {
+    background-color: rgba(52, 84, 97, 1.0);
+    color: white;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+    
+    position: absolute;
+    top : 100px;
+    left : 40%;
+    width: 25%;
+
+    padding: 20px;
+}
+
+.mainlist3_ {
+    background-color: rgba(52, 84, 97, 1.0);
+    color: white;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+    
+    position: absolute;
+    top : 100px;
+    left : 70%;
+    width: 25%;
+
+    padding: 20px;
+}
+
+.todolist1_frame {
+    position: absolute;
+    top : 220px;
+    left : 5%;
+    width: 25%
+}
+
+.todolist1 {
     background-color: rgba(206, 229, 239, 1.0);
     color: black;
     font-weight: bolder;
@@ -49,13 +107,61 @@
     font-size: 20px;
     border: 1px solid gray;
     
+    position: relative;
+
+    left : 40%;
+    height: 70px;
+
+    margin-bottom: 20px;
+    padding : 10px;
+}
+
+.todolist2_frame {
     position: absolute;
-    float: right;
-    width: 25%;
-    top : 120px;
-    height: 30px;
-    padding: 20px;
-    margin: 10px;
+    top : 220px;
+    left : 35%;
+    width: 25%
+}
+
+.todolist2 {
+    background-color: rgba(206, 229, 239, 1.0);
+    color: black;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+    
+    position: relative;
+
+    left : 40%;
+    height: 70px;
+
+    margin-bottom: 20px;
+    padding : 10px;
+}
+
+.todolist3_frame {
+    position: absolute;
+    top : 220px;
+    left : 65%;
+    width: 25%
+}
+
+.todolist3 {
+    background-color: rgba(206, 229, 239, 1.0);
+    color: black;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+    
+    position: relative;
+
+    left : 40%;
+    height: 70px;
+
+    margin-bottom: 20px;
+    padding : 10px;
 }
 
 .flex-container {

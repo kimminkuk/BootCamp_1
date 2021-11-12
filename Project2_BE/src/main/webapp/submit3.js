@@ -6,7 +6,7 @@ function GetDateFunc() {
     return Date_current;
 }
 
-function SendToDo(param1, param2) {
+function SendToDo(param1, param2, param3) {
     var currentDate3 = GetDateFunc();
 /*    var Post_DB = document.PostDB;
 
@@ -35,11 +35,48 @@ function SendToDo(param1, param2) {
         }
     };
     
-    var ur = 'http://localhost:8080/webapiexam2/todolists?WhatWork_name=' + param1.value 
-+ "&" + "WhoWork_name=" + param2.value + "&PriorityBtn_name=3"; 
+    var ur = 'http://localhost:8080/webapiexam2/todolists?' + "WhatWork_name=" + param1.value 
+    + "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value; 
     xhr.open('GET', ur);
     //xhr.setRequestHeader('Content-type', 'application/json');
     //xhr.send(JSON.stringify(formData));
+
+    reqLis2();
     xhr.send();
 }
 
+
+function reqLis2() {
+	var httpRequest3;
+    fetch('./test3.html').then(function(response) {
+	    response.text().then(function() {
+		    document.querySelector('article').innerHTML = "test";
+	    })
+    })
+}
+
+function SendToDo2(param1, param2, param3) {
+
+    var xhr2 = new XMLHttpRequest();
+    var ur2 = 'http://localhost:8080/webapiexam2/todolists?';
+    var ur3 = '&WhoWork_name=' + param2.value;
+
+    xhr2.open('POST', ur2, true);
+    xhr2.send(ur3);
+}
+
+function clearTextInput() {
+	var textinputlength = document.getElementsByClassName("input-text");
+	var radbtn = document.getElementsByClassName("input-radio");
+	
+	
+	var len_clearTextInput = textinputlength.length;
+	for (var i = 0; i < len_clearTextInput; i++) {
+		textinputlength[i].value = '';
+	}
+	var len_radbtn = radbtn.length;
+	for (var i = 0; i < len_radbtn; i++) {
+		radbtn[i].checked = false;
+	}
+    radbtn[0].checked = true;	
+}
