@@ -81,3 +81,26 @@ function TodoAjax() {
     oReq.open("GET" , "http://localhost:8080/webapiexam2/todolists");
     oReq.send(Work_DB, Who_DB);
 }
+
+function submittodo() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementById("form_add");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[1];
+            file = elmnt.getAttribute("HOME");
+            if(file) {
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        elmnt.innerHTML = this.responseText;
+                        elmnt.removeAttribute("HOME");
+                        includeHTML();
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+            }
+        }
+}
+

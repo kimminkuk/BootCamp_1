@@ -1,6 +1,8 @@
 package kr.or.connect.webapiexam.api;
 
 import java.io.IOException;
+import java.sql.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,17 +33,10 @@ public class ToDoListServletPost extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setCharacterEncoding("utf-8");
-		response.setContentType("application/json");
-		System.out.println("heelo\n");
-		String pathInfo = request.getPathInfo(); //todolistpost/{?}
-		String[] pathParts = pathInfo.split("/");
-		
-		ToDoListDao dao = new ToDoListDao();
-		
-		
-		
-		//dao.addToDo(null, null, getServletName(), getServletInfo(), null)
+		//response.setContentType("application/json");
+		response.setContentType("text/html; charset=utf-8");
+		String w11 = request.getParameter("name");
+		String W222 = request.getParameter("WhatWork_name");
+		System.out.println("post..." + W222 +"REAL?\n");
 	}
-    
-	
 }

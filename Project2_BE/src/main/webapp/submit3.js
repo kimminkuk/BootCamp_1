@@ -1,3 +1,11 @@
+function return_main() {
+	var Post_DB2 = document.PostDB;
+	//Post_DB2.method = "get";
+    Post_DB2.action = "logic";
+    Post_DB2.submit(); // Send to Servlet
+    return true;      
+}
+
 function GetDateFunc() {
     var currentDate = new Date();
     var tt = currentDate.getMonth() + 1;
@@ -36,11 +44,12 @@ function SendToDo(param1, param2, param3) {
     };
     
     var ur = 'http://localhost:8080/webapiexam2/todolists?' + "WhatWork_name=" + param1.value 
-    + "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value; 
+    + "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+//    var ur = 'http://localhost:8080/webapiexam2/todolistpost';
     xhr.open('GET', ur);
     //xhr.setRequestHeader('Content-type', 'application/json');
     //xhr.send(JSON.stringify(formData));
-
+    submittodo(param1);
     reqLis2();
     xhr.send();
 }
@@ -48,9 +57,9 @@ function SendToDo(param1, param2, param3) {
 
 function reqLis2() {
 	var httpRequest3;
-    fetch('./test3.html').then(function(response) {
+    fetch('./HOME.html').then(function(response) {
 	    response.text().then(function() {
-		    document.querySelector('article').innerHTML = "test";
+		    document.querySelector('article').innerHTML = "test11";
 	    })
     })
 }
@@ -79,4 +88,32 @@ function clearTextInput() {
 		radbtn[i].checked = false;
 	}
     radbtn[0].checked = true;	
+}
+
+function submittodo(param1) {
+    var testz = document.getElementsByClassName("testfor46");
+    testz[0].innerHTML = "test";
+}
+
+function submittodo222() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementById("form_add");
+            testz = document.getElementsByClassName("form_add2");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[1];
+            file = elmnt.getAttribute("HOME");
+            if(file) {
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        elmnt.innerHTML = this.responseText;
+                        elmnt.removeAttribute("HOME");
+                        includeHTML();
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+            }
+        }
 }
