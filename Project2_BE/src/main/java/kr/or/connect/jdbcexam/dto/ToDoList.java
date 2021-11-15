@@ -1,5 +1,4 @@
 package kr.or.connect.jdbcexam.dto;
-
 import java.sql.Date;
 import java.util.Calendar;
 
@@ -30,6 +29,7 @@ public class ToDoList {
 				+ ToDoWork + ", ToDoWho=" + ToDoWho + ", ToDoPriority=" + ToDoPriority + "]";
 	}
 
+	
 	public Integer getToDoId() {
 		return ToDoId;
 	}

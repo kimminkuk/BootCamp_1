@@ -4,13 +4,22 @@
 <%@ page import = "kr.or.connect.jdbcexam.dto.ToDoList" %>
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import = "java.util.List" %>
+<%@ page import = "java.util.Date" %>
 <%@ page import = "com.fasterxml.jackson.databind.ObjectMapper" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%
+    ObjectMapper ob = new ObjectMapper();
+    List<ToDoList> list_ = (List<ToDoList>)request.getAttribute("ori_list");
+    request.setAttribute("list_test", list_);
+%> 
+ 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
     <title>HOME</title>
-    <link rel="stylesheet" href="./teststy.css">
+    <link rel="stylesheet" href="./teststy.css?ver=1">
 </head>
 <body>
     <header>
@@ -37,42 +46,22 @@
 
     <article>
         <nav class = "todolist1_frame">
-            <form action="" class = "todolist1" >
-                 javascript study, 김민극, 2021-11-13, 우선순위 1
-            </form>
-        
-            <form action="" class = "todolist1" >
-                <div id = "form_add">
-<%-- <%
-ToDoListDao ToDoDao = new ToDoListDao();
-List<ToDoList> list = new ArrayList<>();
-list = ToDoDao.getAllToDoLists();
-ObjectMapper ob = new ObjectMapper();
-String json = ob.writeValueAsString(list);
-%>
-<%=json%> --%>
-<%-- <%
-    ToDoListDao ToDoDao = new ToDoListDao();
-    ToDoList todo = ToDoDao.getToDoList(1);
-    ObjectMapper ob = new ObjectMapper();
-    String json = ob.writeValueAsString(todo);
-%>
-    <%=json%> --%>
-<%
-    String json = (String)request.getAttribute("todolist");
 
-%>
-<%=json%>
-                </div>
-            </form>
-
+<c:forEach items="${list_test}" var="list_test_num">
             <form action="" class = "todolist1" >
                 <div class = "form_add2">
-
+                    <c:out value="${list_test_num.getToDoWork()}"/><br>
+                    등록날짜: <c:out value="${list_test_num.getToDoDate()} "/>
+                    ,<c:out value="${list_test_num.getToDoWho()}"/>
+                    ,우선순위: <c:out value="${list_test_num.getToDoPriority()}"/>
+                    <button id="temp1" type="button" onclick="" style="cursor; hand;">
+                        &rarr;
+                    </button>
                 </div>
-            </form>
-        </nav>    
+            </form>   
+</c:forEach>
 
+        </nav>
         <nav class = "todolist2_frame">
             <form action="" class = "todolist2" >
                 <div>
@@ -101,6 +90,6 @@ String json = ob.writeValueAsString(list);
             </form>
         </nav>
     </article>    
-    <script type="text/javascript" src="submit3.js"></script>
+    <script type="text/javascript" src="submit3.js?ver=1"></script>
 </body>
 </html>

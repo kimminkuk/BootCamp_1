@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -120,6 +122,7 @@ public class ToDoListDao {
     		try(ResultSet rs = ps.executeQuery()) {
     			while(rs.next()) {
        				Date todolist_date = rs.getDate(2);
+       				LocalDate LD = rs.getDate(2).toLocalDate();
        				String todolist_work = rs.getString(3);
        				String todolist_who = rs.getString(4);
        				int todolist_prio = rs.getInt(5);

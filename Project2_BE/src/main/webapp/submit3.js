@@ -42,9 +42,15 @@ function SendToDo(param1, param2, param3) {
             }
         }
     };
-    
-    var ur = 'http://localhost:8080/webapiexam2/todolists?' + "WhatWork_name=" + param1.value 
+
+    //[HOME CASE]    
+    //var ur = 'http://localhost:8080/webapiexam2/todolists?' + "WhatWork_name=" + param1.value 
+    //+ "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+
+    //[OFFICE CASE]
+    var ur = 'http://localhost:8080/TODO/todolists?' + "WhatWork_name=" + param1.value 
     + "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+
 //    var ur = 'http://localhost:8080/webapiexam2/todolistpost';
     xhr.open('GET', ur);
     //xhr.setRequestHeader('Content-type', 'application/json');
