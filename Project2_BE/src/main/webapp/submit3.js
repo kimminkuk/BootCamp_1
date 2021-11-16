@@ -1,7 +1,66 @@
+function Aajx_movebtn() {
+	var xhr_movebtn = new XMLHttpRequest();
+	
+    //[HOME CASE]    
+    //var ur = 'http://localhost:8080/webapiexam2/movetodoing?' + "WhatWork_name=" + param1.value 
+    //+ "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+
+    //[OFFICE CASE]
+    //var ur_xhr_movebtn = 'http://localhost:8080/TODO/movetodoing?move_1=1';
+    var ur_xhr_movebtn = "movetodoing";
+    xhr_movebtn.open('GET', ur_xhr_movebtn);
+    xhr_movebtn.onreadystatechange = function() {
+	    
+    }
+    xhr_movebtn.send();
+}
+
+function Aajx_movebtn2() {
+	var tableList = document.querySelector(".form_add2");
+	var tt = document.querySelector(".form_add4");
+	tt.innerText = "";
+	var tt_ = tt.innerText;
+    var table_ = tableList.innerText;
+    fetch('./logic').then(function(response) {
+	    response.text().then(function() {
+		    tt_ = "TEXT TEST";
+	    })
+    })
+}
+
+function Aajx_movebtn3() {
+	var xhr_movebtn = new XMLHttpRequest();
+	
+    //[HOME CASE]    
+    //var ur = 'http://localhost:8080/webapiexam2/movetodoing?' + "WhatWork_name=" + param1.value 
+    //+ "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+
+    //[OFFICE CASE]
+    //var ur_xhr_movebtn = 'http://localhost:8080/TODO/movetodoing?move_1=1';
+
+	var tableList = document.querySelector(".form_add2");
+	var tt = document.querySelector(".form_add4");
+	var tt_ = tt.innerText;
+    var table_ = tableList.innerText;
+    tt_ = "TEXT TEST";
+    var ur_xhr_movebtn = "movetodoing";
+    xhr_movebtn.open('GET', ur_xhr_movebtn);
+    xhr_movebtn.send();
+}
+
+function reqLis3() {
+    fetch('./logic').then(function(response) {
+	    response.text().then(function() {
+		    document.querySelector('form_add2').innerHTML = "test11";
+	    })
+    })
+}
+
 function return_main() {
 	var Post_DB2 = document.PostDB;
 	//Post_DB2.method = "get";
     Post_DB2.action = "logic";
+    //Post_DB2.action = "main1.jsp";
     Post_DB2.submit(); // Send to Servlet
     return true;      
 }
@@ -16,23 +75,8 @@ function GetDateFunc() {
 
 function SendToDo(param1, param2, param3) {
     var currentDate3 = GetDateFunc();
-/*    var Post_DB = document.PostDB;
-
-    if (!param1 || !param2) {
-        console.log("ERR: EMPTY TEXT!")
-        return false;
-    } else {
-        Post_DB.method = "get";
-        Post_DB.action = "todolists";
-        Post_DB.submit(); // Send to Servlet
-        
-        alert("OK");
-        return true;  
-    }
-*/
 
     var xhr = new XMLHttpRequest();
-    var formData = {'age': 26, 'lang': 'JS', 'drink': 'zero coke'};
     xhr.onreadystatechange = function () {
         if (xhr.readyState === xhr.DONE) {
             if (xhr.status === 200 || xhr.status === 201) {
@@ -55,8 +99,6 @@ function SendToDo(param1, param2, param3) {
     xhr.open('GET', ur);
     //xhr.setRequestHeader('Content-type', 'application/json');
     //xhr.send(JSON.stringify(formData));
-    submittodo(param1);
-    reqLis2();
     xhr.send();
 }
 

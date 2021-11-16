@@ -12,6 +12,9 @@
     ObjectMapper ob = new ObjectMapper();
     List<ToDoList> list_ = (List<ToDoList>)request.getAttribute("ori_list");
     request.setAttribute("list_test", list_);
+    
+    List<ToDoList> list_2 = (List<ToDoList>)request.getAttribute("movetodoinglist");
+    request.setAttribute("movetodoinglist_test", list_2);
 %> 
  
 <!DOCTYPE html>
@@ -54,7 +57,7 @@
                     등록날짜: <c:out value="${list_test_num.getToDoDate()} "/>
                     ,<c:out value="${list_test_num.getToDoWho()}"/>
                     ,우선순위: <c:out value="${list_test_num.getToDoPriority()}"/>
-                    <button id="temp1" type="button" onclick="" style="cursor; hand;">
+                    <button id="temp1" type="button" onclick="Aajx_movebtn3()" style="cursor; hand;">
                         &rarr;
                     </button>
                 </div>
@@ -63,22 +66,25 @@
 
         </nav>
         <nav class = "todolist2_frame">
-            <form action="" class = "todolist2" >
-                <div>
-                    11
-                </div>
-            </form>
         
+<c:forEach items="${movetodoinglist_test}" var="movetodoinglist_test_num">
             <form action="" class = "todolist2" >
-                <div>
-                    12
+                <div class = "form_add3">
+                    <c:out value="${movetodoinglist_test_num.getToDoWork()}"/><br>
+                    등록날짜: <c:out value="${movetodoinglist_test_num.getToDoDate()} "/>
+                    ,<c:out value="${movetodoinglist_test_num.getToDoWho()}"/>
+                    ,우선순위: <c:out value="${movetodoinglist_test_num.getToDoPriority()}"/>
+                    <button id="temp1" type="button" onclick="" style="cursor; hand;">
+                        &rarr;
+                    </button>
                 </div>
-            </form>
+            </form>   
+</c:forEach>
         </nav>
 
         <nav class = "todolist3_frame">
             <form action="" class = "todolist3" >
-                <div>
+                <div class = "form_add4">
                     21
                 </div>
             </form>
@@ -89,7 +95,7 @@
                 </div>
             </form>
         </nav>
-    </article>    
+    </article>
     <script type="text/javascript" src="submit3.js?ver=1"></script>
 </body>
 </html>
