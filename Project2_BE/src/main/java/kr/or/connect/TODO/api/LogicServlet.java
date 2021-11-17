@@ -71,7 +71,7 @@ public class LogicServlet extends HttpServlet {
 		ObjectMapper ob = new ObjectMapper();
 		String json = ob.writeValueAsString(list);
 		request.setAttribute("ori_list", list);
-		System.out.println("LogicServlet ok");
+		System.out.println("LogicServlet ok, num: " + list.size());
 
 		RequestDispatcher rd = request.getRequestDispatcher("/main1.jsp");
 		rd.forward(request, response);

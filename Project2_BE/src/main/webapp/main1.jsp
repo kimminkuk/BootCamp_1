@@ -27,7 +27,7 @@
 <body>
     <header>
         <div id = "inclinationText"> 
-            나의 해야할 일들
+            <!-- 나의 해야할 일들 -->
         </div>
         <div class = "btnsty">
             <button id = "btn1" type="button" onclick="location.href='./test3.html'" style="cursor: hand;">
@@ -59,6 +59,9 @@
                     ,우선순위: <c:out value="${list_test_num.getToDoPriority()}"/>
                     <button id="temp1" type="button" onclick="Aajx_movebtn3()" style="cursor; hand;">
                         &rarr;
+                    </button>
+                    <button id="temp2" type="button" onclick="Ajax_test2(<c:out value="${list_test_num.getToDoId()}"/>)" style="cursor; hand;">
+                        +
                     </button>
                 </div>
             </form>   
@@ -96,6 +99,6 @@
             </form>
         </nav>
     </article>
-    <script type="text/javascript" src="submit3.js?ver=1"></script>
+    <script type="text/javascript" src="submit3.js?ver=5"></script>
 </body>
 </html>

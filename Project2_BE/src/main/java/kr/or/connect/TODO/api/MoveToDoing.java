@@ -37,13 +37,24 @@ public class MoveToDoing extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html; charset=utf-8");
+	    request.setCharacterEncoding("utf8");
+	    response.setCharacterEncoding("utf8");
+
+	    String Id = request.getParameter("getId");
+	    System.out.println("Check Id: " + Id);
+	    Integer Id_int = Integer.parseInt(Id);
+	    
 		ToDoListDao ToDoDao = new ToDoListDao();
 		List<ToDoList> list = new ArrayList<>();
-		list.add(ToDoDao.getToDoList(10));
+		list.add(ToDoDao.getToDoList(Id_int));
 		
 		request.setAttribute("movetodoinglist", list);
 		RequestDispatcher rd = request.getRequestDispatcher("/main1.jsp");
 		rd.forward(request, response);
-		System.out.println("movetodoing here");
+		
+		String testresult = list.toString();
+		
+		System.out.println("result: " + testresult);
 	}
 }

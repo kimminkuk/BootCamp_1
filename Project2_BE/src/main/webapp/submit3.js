@@ -28,7 +28,8 @@ function Aajx_movebtn2() {
     })
 }
 
-function Aajx_movebtn3() {
+function Aajx_movebtn3(getId) {
+	reqLis2();
 	var xhr_movebtn = new XMLHttpRequest();
 	
     //[HOME CASE]    
@@ -36,16 +37,58 @@ function Aajx_movebtn3() {
     //+ "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
 
     //[OFFICE CASE]
-    //var ur_xhr_movebtn = 'http://localhost:8080/TODO/movetodoing?move_1=1';
+    var ur_xhr_movebtn = "http://localhost:8080/TODO/movetodoing?getId=" + getId.value;
 
 	var tableList = document.querySelector(".form_add2");
 	var tt = document.querySelector(".form_add4");
 	var tt_ = tt.innerText;
     var table_ = tableList.innerText;
     tt_ = "TEXT TEST";
-    var ur_xhr_movebtn = "movetodoing";
+    //var ur_xhr_movebtn = "movetodoing?getId="+ getId.value;
     xhr_movebtn.open('GET', ur_xhr_movebtn);
     xhr_movebtn.send();
+}
+
+
+function Ajax_test2(getId_) {
+	var testx = new XMLHttpRequest();
+	//var urtt = "http://localhost:8080/TODO/logic";
+	var urtt = "http://localhost:8080/TODO/movetodoing?getId=" + getId_;
+	testx.open('GET', urtt);
+	
+	testx.onreadystatechange = function() {
+		if(testx.readyState == 4 && testx.status == 200) {
+			
+		}
+	};
+	
+	testx.send();
+}
+
+function Ajax_test3() {
+    var xhr_Ajax_test3 = new XMLHttpRequest();
+    xhr_Ajax_test3.onreadystatechange = function () {
+        if (xhr_Ajax_test3.readyState === xhr.DONE) {
+            if (xhr_Ajax_test3.status === 200 || xhr_Ajax_test3.status === 201) {
+                console.log(xhr_Ajax_test3.responseText);
+            } else {
+                console.error(xhr_Ajax_test3.responseText);
+            }
+        }
+    };
+
+    //[HOME CASE]    
+    //var ur = 'http://localhost:8080/webapiexam2/todolists?' + "WhatWork_name=" + param1.value 
+    //+ "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+
+    //[OFFICE CASE]
+    var ur_xhr_Ajax_test3 = 'http://localhost:8080/TODO/logic';
+
+//    var ur = 'http://localhost:8080/webapiexam2/todolistpost';
+    xhr_Ajax_test3.open('GET', ur_xhr_Ajax_test3);
+    //xhr.setRequestHeader('Content-type', 'application/json');
+    //xhr.send(JSON.stringify(formData));
+    xhr_Ajax_test3.send();
 }
 
 function reqLis3() {
@@ -93,7 +136,7 @@ function SendToDo(param1, param2, param3) {
 
     //[OFFICE CASE]
     var ur = 'http://localhost:8080/TODO/todolists?' + "WhatWork_name=" + param1.value 
-    + "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+    + "&WhoWork_name=" + param2.value + "&PriorityBtn_name1=" + param3.value;
 
 //    var ur = 'http://localhost:8080/webapiexam2/todolistpost';
     xhr.open('GET', ur);
@@ -105,10 +148,8 @@ function SendToDo(param1, param2, param3) {
 
 function reqLis2() {
 	var httpRequest3;
-    fetch('./HOME.html').then(function(response) {
-	    response.text().then(function() {
-		    document.querySelector('article').innerHTML = "test11";
-	    })
+    fetch('./logic').then(function(response) {
+	    return response.json();
     })
 }
 
