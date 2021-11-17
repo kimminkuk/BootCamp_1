@@ -68,9 +68,69 @@ function Ajax_test2(getId_) {
 function Ajax_test3() {
     var xhr_Ajax_test3 = new XMLHttpRequest();
     xhr_Ajax_test3.onreadystatechange = function () {
-        if (xhr_Ajax_test3.readyState === xhr.DONE) {
+        if (xhr_Ajax_test3.readyState === xhr_Ajax_test3.DONE) {
             if (xhr_Ajax_test3.status === 200 || xhr_Ajax_test3.status === 201) {
-                console.log(xhr_Ajax_test3.responseText);
+	            var span = document.createElement("span");
+span.innerHTML = "!!!";
+span.style.fontSize = 50+"pt";
+span.style.position = "absolution";
+span.style.left = 100 + "px";
+span.style.top = 50 + "px";
+span.style.color = "red";
+document.body.appendChild(span);
+var h = document.createElement("H1");
+var txt = document.createTextNode("제발좀 !!!");
+h.appendChild(txt);
+document.body.appendChild(h);
+            } else {
+                console.error(xhr_Ajax_test3.responseText);
+            }
+        }
+    };
+
+    //[HOME CASE]    
+    //var ur = 'http://localhost:8080/webapiexam2/todolists?' + "WhatWork_name=" + param1.value 
+    //+ "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+
+    //[OFFICE CASE]
+    var ur_xhr_Ajax_test3 = 'http://localhost:8080/TODO/logic';
+    xhr_Ajax_test3.open('GET', ur_xhr_Ajax_test3);
+    xhr_Ajax_test3.send();
+}
+
+function Ajax_test4(getWork) {
+    var xhr_Ajax_test3 = new XMLHttpRequest();
+    xhr_Ajax_test3.onreadystatechange = function () {
+        if (xhr_Ajax_test3.readyState === xhr_Ajax_test3.DONE) {
+            if (xhr_Ajax_test3.status === 200 || xhr_Ajax_test3.status === 201) {
+
+var todoliist2_frame_ = document.createElement("nav");
+todoliist2_frame_.style.position = "absolution";
+todoliist2_frame_.style.top = 220 + "px";
+todoliist2_frame_.style.left = 35 + "%";
+todoliist2_frame_.style.width = 25 + "%";
+
+var todoclass = document.createElement("form");
+todoclass.style.fontSize = 20+"px";
+todoclass.style.position = "relative";
+todoclass.style.border = 1 + "px" +" solid" + " gray";
+todoclass.style.textAlign = "left";
+todoclass.style.fontWeight = "bolder";
+todoclass.style.color = "black";
+todoclass.style.left = 40 + "%";
+todoclass.style.height = 70 + "px";
+todoclass.style.marginBottom = 20+"px";
+todoclass.style.padding = 10 + "px";
+todoclass.style.backgroundColor = "rgba(" + 206 +"," + 229 +","+239+","+1.0+")";
+todoclass.id = "form_add3_result_";
+document.body.appendChild(todoliist2_frame_);
+todoliist2_frame_.append(todoclass);
+
+document.getElementById("form_add3_result_").innerText = "HI?";
+//var div_todoclass = document.createElement("div");
+//var txt_todoclass = document.createTextNode("LIST 데이터 이동.." + "가능?");
+//div_todoclass.appendChild(txt_todoclass);
+//document.body.appendChild(div_todoclass);
             } else {
                 console.error(xhr_Ajax_test3.responseText);
             }
@@ -88,6 +148,24 @@ function Ajax_test3() {
     xhr_Ajax_test3.open('GET', ur_xhr_Ajax_test3);
     //xhr.setRequestHeader('Content-type', 'application/json');
     //xhr.send(JSON.stringify(formData));
+    xhr_Ajax_test3.send();
+}
+
+function Ajax_test5() {
+    var xhr_Ajax_test3 = new XMLHttpRequest();
+    xhr_Ajax_test3.onreadystatechange = function () {
+        if (xhr_Ajax_test3.readyState === xhr_Ajax_test3.DONE) {
+            if (xhr_Ajax_test3.status === 200 || xhr_Ajax_test3.status === 201) {
+var transt = document.getElementById("form_add2_id")
+transt.style.left = 35 + "%";
+            } else {
+                console.error(xhr_Ajax_test3.responseText);
+            }
+        }
+    };
+    //[OFFICE CASE]
+    var ur_xhr_Ajax_test3 = 'http://localhost:8080/TODO/logic';
+    xhr_Ajax_test3.open('GET', ur_xhr_Ajax_test3);
     xhr_Ajax_test3.send();
 }
 
@@ -136,7 +214,7 @@ function SendToDo(param1, param2, param3) {
 
     //[OFFICE CASE]
     var ur = 'http://localhost:8080/TODO/todolists?' + "WhatWork_name=" + param1.value 
-    + "&WhoWork_name=" + param2.value + "&PriorityBtn_name1=" + param3.value;
+    + "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
 
 //    var ur = 'http://localhost:8080/webapiexam2/todolistpost';
     xhr.open('GET', ur);

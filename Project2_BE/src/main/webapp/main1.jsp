@@ -48,7 +48,7 @@
     </nav>
 
     <article>
-        <nav class = "todolist1_frame">
+        <nav class = "todolist1_frame" id = "form_add2_id">
 
 <c:forEach items="${list_test}" var="list_test_num">
             <form action="" class = "todolist1" >
@@ -57,7 +57,10 @@
                     등록날짜: <c:out value="${list_test_num.getToDoDate()} "/>
                     ,<c:out value="${list_test_num.getToDoWho()}"/>
                     ,우선순위: <c:out value="${list_test_num.getToDoPriority()}"/>
-                    <button id="temp1" type="button" onclick="Aajx_movebtn3()" style="cursor; hand;">
+                    
+                    <c:set var = "test_work" value="${list_test_num.getToDoWork()}"/>
+                    
+                    <button id="temp1" type="button" onclick="Ajax_test5()" style="cursor; hand;">
                         &rarr;
                     </button>
                     <button id="temp2" type="button" onclick="Ajax_test2(<c:out value="${list_test_num.getToDoId()}"/>)" style="cursor; hand;">
@@ -68,10 +71,9 @@
 </c:forEach>
 
         </nav>
-        <nav class = "todolist2_frame">
-        
+        <nav class = "todolist2_frame"  >
 <c:forEach items="${movetodoinglist_test}" var="movetodoinglist_test_num">
-            <form action="" class = "todolist2" >
+            <form action="" class = "todolist2" id = "todolist2_id">
                 <div class = "form_add3">
                     <c:out value="${movetodoinglist_test_num.getToDoWork()}"/><br>
                     등록날짜: <c:out value="${movetodoinglist_test_num.getToDoDate()} "/>
@@ -86,7 +88,7 @@
         </nav>
 
         <nav class = "todolist3_frame">
-            <form action="" class = "todolist3" >
+            <form action="" class = "todolist3" id="todolist3_id">
                 <div class = "form_add4">
                     21
                 </div>
@@ -99,6 +101,6 @@
             </form>
         </nav>
     </article>
-    <script type="text/javascript" src="submit3.js?ver=5"></script>
+    <script type="text/javascript" src="submit3.js?ver=14"></script>
 </body>
 </html>
