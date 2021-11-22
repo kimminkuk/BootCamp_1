@@ -15,7 +15,11 @@ function GetDateFunc() {
 
 function SendToDo(param1, param2, param3) {
     var currentDate3 = GetDateFunc();
-
+    console.log(param2.value.length);
+    if(param1.value.length > 48 || param2.value.length > 24) {
+	    alert('Text Length Over! retry plz');
+        return false;
+    }
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState === xhr.DONE) {
@@ -41,6 +45,36 @@ function SendToDo(param1, param2, param3) {
 
     xhr.open('GET', ur);
     xhr.send();
+}
+
+function SendToDoPost(param1, param2, param3) {
+    var xhrPost = new XMLHttpRequest();
+    
+    //var xhrPost_ur = 'http://localhost:8080/PJT2_ODOLIST/todolists?WhatWork_name=Post Error...&WhoWork_name=Hage&PriorityBtn_name=3';
+    //var xhrPost_ur = 'http://localhost:8080/PJT2_ODOLIST/todolists';
+    //var xhrPost_ur = 'http://localhost:8080/PJT2_ODOLIST/todolists?' + "WhatWork_name=" + param1.value 
+    //+ "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+    //var xhrPost_ur = 'PJT2_ODOLIST/logic';
+    //var xhrPost_ur = '/PostTest';
+    //var xhrPost_ur = 'PJT2_ODOLIST/PostTest' 
+    xhrPost.open('POST', 'PJT2_ODOLIST/PostTest', true);
+    xhrPost.onreadystatechange = function () {
+        if (xhrPost.readyState === xhrPost.DONE) {
+            if (xhrPost.status === 200) {
+                console.log(xhrPost.responseText);
+            } else {
+                console.error(xhrPost.responseText);
+            }
+        }
+    };
+
+    xhrPost.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //[END POSITION]
+    var urPost = "WhatWork_name=" + param1.value + "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+    //xhrPost.send("WhatWork_name=Post테스트!&WhoWork_name=MKK.KIIMM&PriorityBtn_name=3");
+    //var urPost = "todolists"+"WhatWork_name=" + param1.value + "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
+    //xhrPost.send(JSON.stringify(testdata));
+    xhrPost.send(urPost);
 }
 
 function clearTextInput() {

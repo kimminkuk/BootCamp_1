@@ -19,7 +19,7 @@
 <head>
 <meta charset="UTF-8">
     <title>HOME</title>
-    <link rel="stylesheet" href="./main1css.css?ver=1">
+    <link rel="stylesheet" href="./main1css.css?ver=20">
 </head>
 <body>
     <header>
@@ -27,7 +27,7 @@
             나의 해야할 일들
         </div>
         <div class = "btnsty">
-            <button id = "btn1" type="button" onclick="location.href='./test3.html'" style="cursor: hand;">
+            <button id = "btn1" type="button" onclick="location.href='./test3.html?ver=20'">
                 새로운 TODO 등록
             </button>
         </div>
@@ -53,10 +53,10 @@
                     등록날짜: <c:out value="${list_test_num.getToDoDate()} "/>
                     ,<c:out value="${list_test_num.getToDoWho()}"/>
                     ,우선순위   <c:out value="${list_test_num.getToDoPriority()}"/>             
-                    <button id="temp1" type="button" onclick="MoveRight(<c:out value="${list_test_num.getToDoId()}"/>)" style="cursor; hand;">
+                    <button id="temp1_btn" type="button" onclick="MoveRight(<c:out value="${list_test_num.getToDoId()}"/>)">
                         &rarr;
                     </button>
-                    <button id="temp2" type="button" onclick="MoveLeft(<c:out value="${list_test_num.getToDoId()}"/>)" style="cursor; hand;">
+                    <button id="temp1_btn" type="button" onclick="MoveLeft(<c:out value="${list_test_num.getToDoId()}"/>)">
                         &larr;
                     </button>
                 </div>
@@ -66,6 +66,6 @@
         <nav class = "todolist2_frame"  id = "todolist2_frame_id"></nav>
         <nav class = "todolist3_frame" id = todolist3_frame_id></nav>
     </article>
-    <script type="text/javascript" src="main1js.js?ver=3"></script>
+    <script type="text/javascript" src="main1js.js?ver=20"></script>
 </body>
 </html>

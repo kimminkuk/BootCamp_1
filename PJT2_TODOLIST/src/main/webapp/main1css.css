@@ -27,6 +27,8 @@
     padding : 10px;
     
     height : 40px;
+    
+    cursor: pointer;
 }
 
 .mainlist_ {
@@ -159,6 +161,7 @@
     left: 180px;
     height: 30px;
     width: 100px;
+    cursor: pointer;
 }
 
 #btn3 {
@@ -172,6 +175,7 @@
     left: 300px;
     height: 30px;
     width: 100px;
+    cursor: pointer;
 }
 
 #btn4 {
@@ -185,6 +189,10 @@
     left: 0px;
     height: 30px;
     width: 100px;
-
+    cursor: pointer;
     text-decoration: underline;
+}
+
+#temp1_btn {
+	cursor: pointer;
 }

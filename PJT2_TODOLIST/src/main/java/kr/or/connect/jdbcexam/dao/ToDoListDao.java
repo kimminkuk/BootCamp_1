@@ -37,11 +37,12 @@ public class ToDoListDao {
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (rs == 2) {
+			if (rs != 1) {
 			    System.out.println("Update Query Error");
 			} else {
 				System.out.println("Update Query OK");
 			}
+			System.out.println("rs :" + rs);
 			if (ps != null) {
 				try {
 					ps.close();

@@ -1,10 +1,7 @@
 package kr.or.connect.PJ2_ODOLIST;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,30 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import kr.or.connect.jdbcexam.dao.ToDoListDao;
-import kr.or.connect.jdbcexam.dto.ToDoList;
 
 /**
- * Servlet implementation class ToDoListServlet
+ * Servlet implementation class PostTest
  */
-@WebServlet("/todolists")
-public class ToDoListServlet extends HttpServlet {
+@WebServlet("/PostTest")
+public class PostTest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ToDoListServlet() {
+    public PostTest() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		response.setContentType("text/html; charset=utf-8");
 	    request.setCharacterEncoding("utf8");
 	    response.setCharacterEncoding("utf8");
@@ -48,7 +43,8 @@ public class ToDoListServlet extends HttpServlet {
 		String w3 = request.getParameter("PriorityBtn_name"); 
 		Integer w3_int = Integer.parseInt(w3);
 		
-		System.out.println("Work: " + w1 + "Who: " + w2);		
+		System.out.println("POST: Work: " + w1 + "Who: " + w2);		
 		ToDoDao.addToDoAuto(date, w1, w2, w3_int );
 	}
+
 }
